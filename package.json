@@ -1,0 +1,20 @@
+{
+  "name": "cypress-end2end-framework",
+  "version": "1.0.0",
+  "description": "Framework cypress Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test":"Test", "cypress:open": "cypress open"
+   
+  },
+  "keywords": [
+    "Cypress",
+    "Typescript",
+    "Javascript"
+  ],
+  "author": "Victor Bañó Rodríguez",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.13.0"
+  }
+}
