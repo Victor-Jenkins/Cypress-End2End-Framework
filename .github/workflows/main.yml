@@ -12,5 +12,5 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v5
         with:
-          start: --spec ./homeSauceshop.cy.js
+          start: --spec ./.js
           
