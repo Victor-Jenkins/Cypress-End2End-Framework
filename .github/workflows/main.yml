@@ -1,13 +1,22 @@
 name: E2E in custom container
-on: push
+
+on: 
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    # Cypress Docker image with Chrome v106
-    # and Firefox v106 pre-installed
-    container: cypress/browsers:node18.12.0-chrome106-ff106
+  checkout-and-test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Cypress run
-      - uses: cypress-io/github-action@v2.2.7
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: run cypress tests with firefox
+        uses: cypress-io/github-action@v2
+        timeout-minutes: 10
         with:
-          browser: chrome
+          browser: firefox
